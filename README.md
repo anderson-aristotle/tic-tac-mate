@@ -10,7 +10,7 @@
 #Only one player needs to sign-up and into an account to play the game.
 
 #Author
-#Rex
+#Aristotle Anderson
 
 #License
 # MIT License
