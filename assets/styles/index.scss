@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #FFE599;
+}
+
+.box  {
+  align-items: center;
+  border: 5px solid;
+  border-radius: 2px;
+  display: flex;
+  font-family: Helvetica;
+  font-size: 4em;
+  justify-content: center;
+}
