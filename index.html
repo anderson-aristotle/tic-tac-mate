@@ -14,18 +14,52 @@
 </head>
 
 <body>
-  <h1>Tic-Tac-Toe-Mate</h1>
-  <div id="header-navigation-bar">
-    <nav>
-      <ul>
-        <li>About</li>
-        <li>Instructions</li>
-        <li></li>
-      </ul>
+  <h1>Let's play!</h1>
+  <h3> Tic-Tac-Toe-Mate</h3>
 
-    </nav>
-  </div>
+  <!-- Sign-Up-Credentials -->
+  <form id="sign-up" action="">
+    <label for="sign-up-email">Email</label>
+    <input id="sign-up-box" type="text" placeholder="Email" name="credentials[email]">
 
-</body>
+    <label for="sign-up-password">Password</label>
+    <input id="sign-up-password" type="password" placeholder="Password" name="credentials[password]">
 
+    <label for="sign-up-password-confirmation">Confirm Password</label>
+    <input id="sign-up-password-confirmation" type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
+
+    <input id="text" type="submit">
+  </form>
+
+  <!--Login Credentials -->
+  <form id="log-in" action="">
+    <label for="log-in-creditinals">Sign-In</label>
+    <input id="log-in-email" type="email" placeholder="Enter Email" name="credentials[email]">
+
+    <input id="log-password" type="password" placeholder="Enter Password" name="credentials[password]">
+
+    <input id="log-submit" type="submit">
+  </form>
+
+  <!-- Log-Out Credentials -->
+    <button type="button" class="btn btn-secondary-hide" id="signUpButton" data-toggle="modal" data-target="#signUpModal">Sign-Out
+    </button>
+
+  <!-- Gameboard Divs-->
+    <div class="game-board">
+      <div class="row">
+        <div id="cell-zero" class="col-4 box"></div>
+        <div id="cell-one" class="col-4 box"></div>
+        <div id="cell-two" class="col-4 box"></div>
+
+        <div id="cell-three" class="col-4 box"></div>
+        <div id="cell-four" class="col-4 box"></div>
+        <div id="cell-five" class="col-4 box"></div>
+
+        <div id="cell-six" class="col-4 box"></div>
+        <div id="cell-seven" class="col-4 box"></div>
+        <div id="cell-eight" class="col-4 box"></div>
+      </div>
+    </div>
+  </body>
 </html>
