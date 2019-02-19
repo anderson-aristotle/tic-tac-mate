@@ -1,15 +1,27 @@
 @import '~bootstrap/scss/bootstrap';
 
-body {
-  background-color: #FFE599;
+* {
+  background-color: #8E7CC3;
+
 }
 
-.box  {
-  align-items: center;
-  border: 5px solid;
-  border-radius: 2px;
+.page-div {
+  display: static;
+
+}
+
+.box {
+  border: 1px solid white;
+}
+
+#game-board {
   display: flex;
-  font-family: Helvetica;
-  font-size: 4em;
-  justify-content: center;
+  height: 600;
+  position: static;
+  width: 600;
+}
+
+.square {
+  width: 50vh;
+  height: 50vh;
 }
