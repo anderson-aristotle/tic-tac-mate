@@ -35,11 +35,9 @@ const switchPlayer = (event) => {
   const value = $(event.target).text()
   const index = $(event.target).data('cell-index')
   const over = false // <--- change in future
-
-    .catch(ui.failure)
   api.updateGameBoard(value, index, over)
-    .then(() => console.log('This works!!!'))
-    .catch()
+    .then((data) => console.log('This works!!!'))
+    .catch(ui.failure)
 }
 
 module.exports = {
