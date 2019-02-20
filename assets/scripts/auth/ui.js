@@ -12,6 +12,8 @@ const signUpFailure = () => {
 const signInSuccess = (responseData) => {
   $('#user-message').text('Successfully signed Sign In')
   store.user = responseData.user
+  console.log('store')
+  console.log(store)
 }
 
 const signInFailure = () => {
@@ -29,7 +31,6 @@ const signOutSuccess = () => {
   $('#user-message').text('success')
   $('form').trigger('reset')
   store.user = null
-  console.log('store:', store)
 }
 
 const signOutFailure = () => {

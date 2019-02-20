@@ -2,12 +2,10 @@
 
 * {
   background-color: #8E7CC3;
-
 }
 
 .page-div {
   display: static;
-
 }
 
 .box {
@@ -16,12 +14,7 @@
 
 #game-board {
   display: flex;
-  height: 600;
-  position: static;
-  width: 600;
-}
-
-.square {
-  width: 50vh;
   height: 50vh;
+  position: static;
+  width: 50vh;
 }
