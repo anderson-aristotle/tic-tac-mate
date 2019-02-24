@@ -4,11 +4,10 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 const onSignUp = (event) => {
+  $('#auth-alert').removeClass('show')
   event.preventDefault()
   const form = event.target
-  console.log('form', form)
   const formData = getFormFields(form)
-  console.log('formData:', formData)
   api.signUp(formData)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -17,10 +16,7 @@ const onSignUp = (event) => {
 const onSignIn = () => {
   event.preventDefault()
   const form = event.target
-  console.log('event.target is the thing: ', form)
-  console.log(form)
   const formData = getFormFields(form)
-  console.log('formData:', formData)
   api.signIn(formData)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -29,7 +25,6 @@ const onSignIn = () => {
 const onChangePassword = (event) => {
   event.preventDefault()
   const form = event.target
-  console.log('form', form)
   const formData = getFormFields(form)
   api.changePassword(formData)
     .then(ui.changePasswordSuccess)
