@@ -1,52 +1,60 @@
 @import '~bootstrap/scss/bootstrap';
 
-// * {
-//   background-color: #8E7CC3;
-// }
-//
-// .page-div {
-//   display: static;
-// }
+input {
+  clear: both;
+  float: left;
+  margin: 7px;
+  padding: 5px;
+}
+
+.auth-container {
+  align-items: center;
+  display: block;
+  margin-left: 30%;
+  margin-top: 10%;
+  top: 200px;
+  width: 40%;
+}
 
 .box {
   border: 1px solid black;
-  width: 200px;
-  height: 200px;
   font-size: 125px;
+  height: 200px;
   padding-left: 30px;
-}
-
-input {
-  padding: 5px;
-  margin: 7px;
-  clear: both;
-  float: left;
-}
-
-#game-board {
-  // display: flex;
-  height: 50vh;
-  position: static;
-  width: 50%;
-  display: none;
-  margin-left: 30%;
-  align-items: center;
-  margin-top: 10%;
+  width: 200px;
 }
 
 .hidden {
   display: none;
 }
 
+.message {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  text-align: center;
+}
+
+.subtitle {
+  font-style: italic;
+  margin-left: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+
 .title {
   text-align: center;
 }
-.subtitle {
-  text-align: center;
-  margin-left: 5px;
-  font-style: italic;
-  padding-top: 10px;
-  padding-bottom: 10px;
+
+#game-board {
+  align-items: center;
+  display: none;
+  height: 50vh;
+  margin-left: 30%;
+  margin-top: 10%;
+  position: static;
+  width: 50%;
 }
 
 #sign-up-alert-container {
@@ -59,29 +67,6 @@ input {
 
 #sign-in-success-container {
   display: none;
-}
-
-.auth-container {
-  display: block;
-  width: 40%;
-  margin-left: 30%;
-  align-items: center;
-  margin-top: 10%;
-  // padding-top: 20%;
-  // padding-left: 45%;
-  // padding-right: 10%;
-
-  // background-color: #f5f5f5;
-  top: 200px;
-  // text-align: center;
-  // margin: auto;
-}
-
-.message {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  text-align: center;
 }
 
 @media only screen and (max-width: 750px) {
