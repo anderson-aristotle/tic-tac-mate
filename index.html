@@ -15,8 +15,10 @@
 
 <body>
   <div class="auth-container">
+  <div id="titles">
     <h1 class="title">Tic-Tac-Toe</h1>
     <h6 class="subtitle">developed by: Aristotle Anderson</h6>
+  </div>
 
     <!--Alert-containers-->
     <!--Sign-up-alert-success-message-->
@@ -84,10 +86,11 @@
 
     <!-- Create Game Button -->
     <button id="create-game" type="button" class="btn btn-primary hidden"> Start Game</button>
+    <!--Reset Game Button -->
 
     <!-- Gameboard Divs-->
-    <div class="container square" id="game-board">
-      <h2>Tic-Tac-Toe</h2>
+    <div class="container square hidden" id="game-board">
+      <h2 id="title-game-board">Tic-Tac-Toe</h2>
       <div class="row">
         <div id="czero" class="col-4 box" data-cell-index="0"></div>
         <div id="cone" class="col-4 box" data-cell-index="1"></div>
