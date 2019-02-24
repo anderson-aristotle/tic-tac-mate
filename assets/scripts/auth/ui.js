@@ -1,19 +1,40 @@
 'use strict'
 const store = require('../store.js')
+const startGame = require('../game/game-events.js')
 
-const signUpSuccess = () => {
-  $('#user-message').text('Successfully Signed Up!')
-}
-
-const signUpFailure = () => {
-  $('#user-message').text('Error on Sign Up')
+const signUpSuccess = (data) => {
+  $('#sign-up-success-container').show()
+  $('#sign-up-auth-alert-success').addClass('show')
+  setTimeout(() => {
+    $('#sign-up-auth-alert-success').removeClass('show')
+    $('#sign-up-success-container').hide()
+  }, 2000)
+  $('.sign-up-container').hide()
+  $('.sign-in-container').show()
 }
 
 const signInSuccess = (responseData) => {
-  $('#user-message').text('Successfully signed Sign In')
-  store.user = responseData.user
-  console.log('store')
+  $('#sign-in-success-container').show()
+  $('#sign-in-auth-alert-success').addClass('show')
+  $('#sign-in-success-container').removeClass()
+  setTimeout(() => {
+    $('#sign-in-auth-alert-success').hide('show')
+    $('#user-message').text('Successfully signed Sign In')
+    store.user = responseData.user
+    $('#sign-in-container').hide()
+    $('#sign-in-form').hide()
+  }, 5000)
+  $('#game-board').show(startGame.createGame)
   console.log(store)
+}
+
+const signUpFailure = () => {
+  $('#sign-up-alert-container').show()
+  $('#sign-up-auth-alert-failure').addClass('show')
+  setTimeout(() => {
+    $('#sign-up-auth-alert-failure').removeClass('show')
+    $('#sign-up-alert-container').hide()
+  }, 2000)
 }
 
 const signInFailure = () => {
