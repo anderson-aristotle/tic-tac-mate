@@ -14,6 +14,7 @@ const onSignUp = (event) => {
 }
 
 const onSignIn = () => {
+  $('#auth-alert').removeClass('show')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
