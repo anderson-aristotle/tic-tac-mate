@@ -23,9 +23,10 @@ const signInSuccess = (responseData) => {
     store.user = responseData.user
     $('#sign-in-container').hide()
     $('#sign-in-form').hide()
-  }, 5000)
-  $('#game-board').show(startGame.createGame)
-  console.log(store)
+  }, 2000)
+  setTimeout(() => {
+    $('#game-board').show(startGame.createGame)
+  }, 2800)
 }
 
 const signUpFailure = () => {
