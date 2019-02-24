@@ -14,10 +14,33 @@
 </head>
 
 <body>
-  <div class="page-div">
+    <div class="auth-container">
+      <h1 class="title">Tic-Tac-Toe</h1>
+      <h3 class="subtitle">developed by Aristotle Anderson</h3>
+
+    <!--Sign-up-message-alert-->
+      <div id="sign-up-alert-container">
+        <div class="alert alert-danger alert-dismissible fade" role="alert" id="sign-up-auth-alert-failure">
+          <strong>Error - </strong> Username exists, or passwords do not match. Try again.
+        </div>
+      </div>
+    </div>
+
+    <!--Sign-in-message-alert -->
+    <div id="sign-in-success-container">
+      <div class="alert alert-success alert-dismissible fade" role="alert" id="sign-in-auth-alert-success">
+        <strong>Success! </strong> You have signed in.
+      </div>
+    </div>
+
+    <!--added features-->
+    <!--Change-password-message-alert-->
+    <!--Sign-out-message-alert-->
+
+    <div class="page-div">
+      <!-- Sign-up-form -->
     <div class="sign-up-container">
-      <!-- Sign-Up-Credentials -->
-      <form id="sign-up-form">
+    <form id="sign-up-form">
         <input name="credentials[email]" type="email" placeholder="email">
         <input name ="credentials[password]" type="password" placeholder="password">
         <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
@@ -25,16 +48,17 @@
       </form>
     </div>
 
-    <!--Sign-In Credentials -->
+    <!--Sign-in-form -->
       <form id="sign-in-form">
-        <input name="credentials[email]" type="email" placeholder="email">
-        <input name="credentials[password]" type="password" placeholder="password">
-        <input type="submit" value="Sign-In">
+          <input name="credentials[email]" class="form-control" type="email" placeholder="email">
+          <input name ="credentials[password]" class="form-control" type="password" placeholder="password">
+          <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="password confirmation">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign-Up">
       </form>
-
     </div>
+
     <!-- Change Password -->
-    <div class="change-password">
+    <div class="change-password-container hidden">
       <form id="change-password-form">
         <input name="passwords[old]" type="password" placeholder="old password">
         <input name="passwords[new]" type="password" placeholder="new password">
@@ -43,31 +67,30 @@
     </div>
 
     <!-- Log-Out Credentials -->
-    <div class="sign-out-container">
+    <div class="sign-out-container hidden">
       <form id="sign-out-form">
         <input type="submit" value="Sign-Out">
       </form>
     </div>
-  <!-- Create Game Button -->
-<button id="create-game"type="button" class="btn btn-primary"> Start Game</button>
+
+    <!-- Create Game Button -->
+    <button id="create-game"type="button" class="btn btn-primary hidden"> Start Game</button>
 
     <!-- Gameboard Divs-->
     <div class="container square" id="game-board">
-      <div class="row">
-        <div id="czero" class="col-4 box" data-cell-index="0"></div>
-        <div id="cone" class="col-4 box" data-cell-index="1"></div>
-        <div id="ctwo" class="col-4 box" data-cell-index="2"></div>
-        <div id="cthree" class="col-4 box" data-cell-index="3"></div>
-        <div id="cfour" class="col-4 box" data-cell-index="4"></div>
-        <div id="cfive" class="col-4 box" data-cell-index="5"></div>
-        <div id="csix" class="col-4 box" data-cell-index="6"></div>
-        <div id="cseven" class="col-4 box" data-cell-index="7"></div>
-        <div id="ceight" class="col-4 box" data-cell-index="8"></div>
+      <h2>Tic-Tac-Toe-Mate</h2>
+        <div class="row">
+          <div id="czero" class="col-4 box" data-cell-index="0"></div>
+          <div id="cone" class="col-4 box" data-cell-index="1"></div>
+          <div id="ctwo" class="col-4 box" data-cell-index="2"></div>
+          <div id="cthree" class="col-4 box" data-cell-index="3"></div>
+          <div id="cfour" class="col-4 box" data-cell-index="4"></div>
+          <div id="cfive" class="col-4 box" data-cell-index="5"></div>
+          <div id="csix" class="col-4 box" data-cell-index="6"></div>
+          <div id="cseven" class="col-4 box" data-cell-index="7"></div>
+          <div id="ceight" class="col-4 box" data-cell-index="8"></div>
+        </div>
       </div>
-    </div>
-    <footer class="clearfix">
-      <p class="message">Developed by Aristotle Anderson. 2019</p>
-    </footer>
-</body>
+  </body>
 
 </html>
