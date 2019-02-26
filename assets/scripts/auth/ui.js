@@ -13,20 +13,11 @@ const signUpSuccess = (data) => {
   $('.sign-in-container').show()
 }
 
-const signInSuccess = (responseData) => {
-  $('#sign-in-success-container').show()
-  $('#sign-in-auth-alert-success').addClass('show')
-  $('#sign-in-success-container').removeClass()
-  setTimeout(() => {
-    $('#sign-in-auth-alert-success').hide('show')
-    $('#user-message').text('Successfully signed Sign In')
-    store.user = responseData.user
-    $('#sign-in-container').hide()
-    $('#sign-in-form').hide()
-  }, 2000)
-  setTimeout(() => {
-    $('#game-board').show(startGame.createGame)
-  }, 2800)
+const signInSuccess = (data) => {
+  $('#user-message').text('Successfully signed Sign In')
+  $('.before-sign-in').hide()
+  $('.after-sign-in').show()
+  store.user = data.user
 }
 
 const signUpFailure = () => {
@@ -53,6 +44,8 @@ const signOutSuccess = () => {
   $('#user-message').text('success')
   $('form').trigger('reset')
   store.user = null
+  $('.before-sign-in').show()
+  $('.after-sign-in').hide()
 }
 
 const signOutFailure = () => {
