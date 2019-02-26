@@ -24,6 +24,10 @@ input {
   width: 200px;
 }
 
+.sign-in-container {
+
+}
+
 .hidden {
   display: none;
 }
@@ -47,14 +51,8 @@ input {
   text-align: center;
 }
 
-#game-board {
-  align-items: center;
-  display: none;
-  height: 50vh;
-  margin-left: 30%;
-  margin-top: 10%;
-  position: static;
-  width: 50%;
+#title-game-board {
+  text-align: center;
 }
 
 #sign-up-alert-container {
