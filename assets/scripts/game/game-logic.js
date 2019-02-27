@@ -11,22 +11,13 @@ const winByPlayer = [
   '#ctwo:contains("PLR"), #cfour:contains("PLR"), #csix:contains("PLR")' // diagonal 2
 ]
 
-const didXWin = function () {
+// find out if player won
+// player = 'X' or 'O'
+const didPlayerWin = (player) => {
   for (let i = 0; i < winByPlayer.length; i++) {
-    const winByX = winByPlayer[i].replace('PLR', 'x')
-    if ($(winByX).length > 0) {
-      // X wins
-      return true
-    }
-  }
-  return false
-}
-
-const didOWin = function () {
-  for (let i = 0; i < winByPlayer.length; i++) {
-    const winByO = winByPlayer[i].replace('PLR', 'o')
-    if ($(winByO).length > 0) {
-      // O wins
+    const win = winByPlayer[i].replace('PLR', player)
+    if ($(win).length > 0) {
+      // player wins
       return true
     }
   }
@@ -34,6 +25,5 @@ const didOWin = function () {
 }
 
 module.exports = {
-  didXWin,
-  didOWin
+  didPlayerWin
 }
