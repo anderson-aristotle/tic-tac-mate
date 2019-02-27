@@ -1,44 +1,16 @@
 'use strict'
 const store = require('../store.js')
 
-// const [variable] = event => {
-//   gameLogic.gameBoard = gameLogic.makeBoard(3)
-//   $('.cell').removeClass('x')
-//   $('.cell').removeClass('o')
-//   gameUi.displayUpdate()
-// }
-
 const createGameSuccess = (gameResponse) => {
   console.log(gameResponse)
   $('user-message').text('Begin Game')
   console.log(gameResponse.game)
   store.game = gameResponse.game
+  store.currentPlayer = 'X'
+  store.winner = false
   console.log('store')
   console.log(store)
 }
-
-// const newGame = () => {
-//   gameApi.createNewGame()
-//     .then(gameLogic.assignID)
-//   gameLogic.gameBoard = gameLogic.makeBoard(3)
-//   $('.cell').removeClass('x')
-//   $('.cell').removeClass('o')
-//   $('#game-display').stop(true, true)
-//   $('#game-display').fadeTo('fast', 1)
-//   gameUi.displayUpdate()
-//   onGetGames()
-// }
-
-// const onMove = event => {
-// if (gameLogic.gameBoard.winner === undefined) {
-// gameLogic.takeTurn(event.target.id)
-// gameUi.displayUpdate()
-// gameUi.boardUpdate()
-// gameApi.updateGame()
-// } else {
-// gameUi.alreadyOver()
-//   }
-// }
 
 const switchPlayerSuccess = data => {
   console.log('this data comes from switch player success')
