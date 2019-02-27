@@ -2,14 +2,21 @@
 const store = require('../store.js')
 
 const createGameSuccess = (gameResponse) => {
-  $('user-message').text('Begin Game')
-  console.log(gameResponse.game)
+  $('#user-message').text('Begin Game')
   store.game = gameResponse.game
-  console.log('store')
-  console.log(store)
+}
+
+const failure = (responseData) => {
+  $('#user-message').text('Something went wrong')
+}
+
+const updateGameSuccess = (responseData) => {
+  $('#user-message').text('Game Updated')
 }
 
 // console.log('store:', store)
 module.exports = {
-  createGameSuccess
+  createGameSuccess,
+  updateGameSuccess,
+  failure
 }

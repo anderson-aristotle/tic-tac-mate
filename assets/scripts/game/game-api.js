@@ -36,7 +36,7 @@ const updateGameBoard = (index, value, boolean) => {
 
 const getGamesPlayed = () => {
   return $.ajax({
-    url: config.apiUrl + `games/:id`,
+    url: config.apiUrl + `games/?over=true`,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
