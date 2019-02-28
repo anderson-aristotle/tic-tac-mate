@@ -13,7 +13,11 @@ const createNewGame = () => {
     .catch(ui.failure)
 
   store.currentPlayer = 'X'
-  store.gameOver = false
+  $('#playerX').addClass('your-turn')
+  $('#playerO').removeClass('your-turn')
+
+  $('.box').text('')
+
   // $('#playerOne').html(store.user.email + ' ' + playerOneCount + ' wins')
   // $('#playerTwo').html('User Two ' + playerTwoCount + ' wins')
 }
@@ -28,30 +32,52 @@ const createNewGame = () => {
 // ]
 
 const clickBox = (event) => {
-  const box = $(event.target)
-  const index = box.data('cell-index')
-  box.text(store.currentPlayer)
 
-  // temporary local copies of these variables
-  const over = logic.didPlayerWin(store.currentPlayer)
-  const player = store.currentPlayer
+  if ($('#game-board').hasClass('started')) {
+    // game in progress
+    const box = $(event.target)
+    if (box.text()) {
+      // already in use
+      // display user message
+      $('#user-feedback').text('That square is taken')
+    } else {
+      const index = box.data('cell-index')
+      box.text(store.currentPlayer)
 
-  if (!over) {
-    switchPlayer()
+      // temporary copies of these variables
+      const over = logic.didPlayerWin(store.currentPlayer)
+      const player = store.currentPlayer
+
+      if (over) {
+        // update API
+        // notify user that current player won, game is over
+        store.winner = player
+        api.updateGameBoard(index, player, true)
+          .then(ui.gameOver)
+          .catch(ui.failure)
+      } else {
+        // update API, switch players, continue game
+        api.updateGameBoard(index, player, false)
+          .then(ui.updateGameSuccess)
+          .catch(ui.failure)
+        switchPlayer()
+      }
+    }
+  } else {
+    // game not started
+    $('#user-feedback').text('Click the Start button')
   }
-
-  store.gameOver = over
-
-  api.updateGameBoard(index, player, over)
-    .then(ui.updateGameSuccess)
-    .catch(ui.failure)
 }
 
 const switchPlayer = () => {
   if (store.currentPlayer === 'X') {
     store.currentPlayer = 'O'
+    $('#playerO').addClass('your-turn')
+    $('#playerX').removeClass('your-turn')
   } else {
     store.currentPlayer = 'X'
+    $('#playerX').addClass('your-turn')
+    $('#playerO').removeClass('your-turn')
   }
 }
 
