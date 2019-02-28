@@ -51,25 +51,26 @@
     <!--Change-password-alert-error-message-->
     <!--Sign-out-alert-success-message-->
 
+    <div class="row">
 
+      <!-- Sign-Up-Credentials -->
+      <div class="sign-up-container col">
+        <form id="sign-up-form">
+          <input name="credentials[email]" class="form-control" type="email" placeholder="email">
+          <input name="credentials[password]" class="form-control" type="password" placeholder="password">
+          <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="password confirmation">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign-Up">
+        </form>
+      </div>
 
-    <!-- Sign-Up-Credentials -->
-    <div class="sign-up-container">
-      <form id="sign-up-form">
-        <input name="credentials[email]" class="form-control" type="email" placeholder="email">
-        <input name="credentials[password]" class="form-control" type="password" placeholder="password">
-        <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="password confirmation">
-        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign-Up">
-      </form>
-    </div>
-
-    <!--Sign-In Credentials -->
-    <div class="sign-in-container hidden">
-      <form id="sign-in-form">
-        <input name="credentials[email]" class="form-control" type="email" placeholder="email">
-        <input name="credentials[password]" class="form-control" type="password" placeholder="password">
-        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign-In">
-      </form>
+      <!--Sign-In Credentials -->
+      <div class="sign-in-container col">
+        <form id="sign-in-form">
+          <input name="credentials[email]" class="form-control" type="email" placeholder="email">
+          <input name="credentials[password]" class="form-control" type="password" placeholder="password">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign-In">
+        </form>
+      </div>
     </div>
   </div>
 
@@ -99,10 +100,10 @@
       </div>
 
     <!-- Players -->
-    <!-- <div class="player ">
-      <div id="playerOne">Player One</div>
-      <div id="playerTwo">Player Two</div>
-    </div> -->
+    <div class="player">
+      <div id="playerX" class="your-turn">Player X</div>
+      <div id="playerO">Player O</div>
+    </div>
 
     <!--User Feedback -->
     <div id="user-feedback"></div>

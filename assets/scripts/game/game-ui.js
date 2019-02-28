@@ -1,65 +1,25 @@
 'use strict'
 const store = require('../store.js')
 
-// const [variable] = event => {
-//   gameLogic.gameBoard = gameLogic.makeBoard(3)
-//   $('.cell').removeClass('x')
-//   $('.cell').removeClass('o')
-//   gameUi.displayUpdate()
-// }
-
-const createGameSuccess = (gameResponse) => {
-  console.log(gameResponse)
-  $('user-message').text('Begin Game')
-  console.log(gameResponse.game)
-  store.game = gameResponse.game
-  console.log('store')
-  console.log(store)
+const createGameSuccess = (responseData) => {
+  $('#user-feedback').text('Begin Game')
+  store.game = responseData.game
+  $('#game-board').addClass('started')
 }
 
-// const newGame = () => {
-//   gameApi.createNewGame()
-//     .then(gameLogic.assignID)
-//   gameLogic.gameBoard = gameLogic.makeBoard(3)
-//   $('.cell').removeClass('x')
-//   $('.cell').removeClass('o')
-//   $('#game-display').stop(true, true)
-//   $('#game-display').fadeTo('fast', 1)
-//   gameUi.displayUpdate()
-//   onGetGames()
-// }
-
-// const onMove = event => {
-// if (gameLogic.gameBoard.winner === undefined) {
-// gameLogic.takeTurn(event.target.id)
-// gameUi.displayUpdate()
-// gameUi.boardUpdate()
-// gameApi.updateGame()
-// } else {
-// gameUi.alreadyOver()
-//   }
-// }
-
-const switchPlayerSuccess = data => {
-  console.log('this data comes from switch player success')
-  console.log(data)
-  store.game.cells = data.game.cells
+const gameOver = (responseData) => {
+  $('#user-feedback').text('Game Over')
+  $('#game-board').removeClass('started')
 }
 
-const userFeedBack = () => {
-  $('user-feedback').on()
+const failure = (responseData) => {
+  $('#user-feedback').text('Something went wrong')
 }
 
-const signInSuccess = (data) => {
-  $('#user-message').text('Successfully signed Sign In')
-  $('.before-sign-in').hide()
-  $('.after-sign-in').show()
-  store.user = data.user
+const updateGameSuccess = (responseData) => {
+  $('#user-feedback').text('Game Updated')
 }
 
-const resetGame = () => {
-  $('#user-message').text('Congrats, game is reset!')
-}
 // console.log('store:', store)
 
 // const onGetGames = () => {
@@ -84,8 +44,7 @@ const resetGame = () => {
 
 module.exports = {
   createGameSuccess,
-  resetGame,
-  switchPlayerSuccess,
-  userFeedBack,
-  signInSuccess
+  gameOver,
+  updateGameSuccess,
+  failure
 }

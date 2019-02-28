@@ -9,12 +9,10 @@ const signUpSuccess = (data) => {
     $('#sign-up-auth-alert-success').removeClass('show')
     $('#sign-up-success-container').hide()
   }, 2000)
-  $('.sign-up-container').hide()
-  $('.sign-in-container').show()
 }
 
 const signInSuccess = (data) => {
-  $('#user-message').text('Successfully signed Sign In')
+  $('#user-message').text('Successfully signed in')
   $('.before-sign-in').hide()
   $('.after-sign-in').show()
   store.user = data.user
