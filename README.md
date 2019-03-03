@@ -1,4 +1,6 @@
 Description:
+
+
 Tic-Tac-Toe is a two-player locally hosted online boardgame.  The object of the game is to get either, three 'X' or 'O' in a row.  A row could mean a column or diagnal or literally in a row.  The user will have to authentic her/himself prior to creating a game.
 
 Technologies:
