@@ -4,6 +4,8 @@ Description:
 Tic-Tac-Toe is a two-player locally hosted online boardgame.  The object of the game is to get either, three 'X' or 'O' in a row.  A row could mean a column or diagnal or literally in a row.  The user will have to authentic her/himself prior to creating a game.
 
 Technologies:
+
+
 HTML
 CSS
 Javascript
@@ -15,10 +17,14 @@ Node
 Browser Template
 
 APIs:
+
+
 Game-Project
 WDI-Library
 
 Planning:
+
+
 1. Read documentation on project
 2. Set-up user authentication
 3. Mapped out board elements in HTML
@@ -30,6 +36,8 @@ Planning:
 
 
 User Stories:
+
+
 As a user, I want to sign-up.
 As a user, I want to be able to sign-in.
 As a user, I want to change my password.
