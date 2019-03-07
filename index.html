@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic-Tac-Toe-Mate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div>
+  <div class="before-sign-in">
+    <div class="auth-container">
+      <div id="titles">
+        <h1 class="title">Tic-Tac-Toe</h1>
+        <h6 class="subtitle">developed by: Aristotle Anderson</h6>
+      </div>
+
+      <!--Alert-containers-->
+      <!--Sign-up-alert-success-message-->
+      <div id="sign-up-success-container">
+        <div class="alert alert-success alert-dismissible fade" role="alert" id="sign-up-auth-alert-success">
+          <strong>Success!</strong> You have signed up.
+        </div>
+      </div>
+
+      <!--Sign-up-alert-error-message-->
+      <div id="sign-up-alert-container">
+        <div class="alert alert-danger alert-dismissible fade" role="alert" id="sign-up-auth-alert-failure">
+          <strong>Error - </strong> Username exists, or passwords do not match. Try again.
+        </div>
+      </div>
+
+      <!--Sign-in-alert-success-message-->
+      <div id="sign-in-success hidden">
+        <div class="alert alert-sign-in-success alert-dismissible fade" role="alert" id="sign-up-auth-alert-success">
+          <strong>Success!</strong> You have signed in!
+        </div>
+      </div>
+    </div>
+
+    <!--Sign-in-alert-error-message-->
+    <!--Change-password-alert-success-message-->
+    <!--Change-password-alert-error-message-->
+    <!--Sign-out-alert-success-message-->
+    <div id="sign-out-alert-container">
+      <div class="alert alert-success alert-dismissible fade" role="alert" id="sign-out-auth-alert-success">
+        <strong>Success!</strong> You are signed out.
+      </div>
+    </div>
+
+    <!-- Sign-Up-Credentials -->
+    <div class="sign-up-container">
+      <form id="sign-up-form">
+        <input name="credentials[email]" class="form-control" type="email" placeholder="email">
+        <input name="credentials[password]" class="form-control" type="password" placeholder="password">
+        <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="password confirmation">
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign-Up">
+      </form>
+    </div>
+
+    <!--Sign-In Credentials -->
+    <div class="sign-in-container hidden">
+      <form id="sign-in-form">
+        <input name="credentials[email]" class="form-control" type="email" placeholder="email">
+        <input name="credentials[password]" class="form-control" type="password" placeholder="password">
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign-In">
+      </form>
+    </div>
+  </div>
+
+  <div class="page-div after-sign-in hidden">
+    <!-- <div class="container-fluid"> -->
+    <div class="btn-group-vertical">
+      <!-- Create Game Button -->
+      <button id="create-game" type="button" class="btn btn-primary">Create Game</button>
+
+      <!-- Get Games Button -->
+      <button id="get-games-form" type="button" class="btn btn-info">Games Played</button>
+
+      <!-- Change Password -->
+      <div class="change-password-container">
+        <form id="change-password-form">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Confirm</button>
+        </form>
+      </div>
+
+      <!-- Sign-Out Credentials -->
+      <div class="sign-out-container" id="sign-out-button">
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign-Out">
+      </div>
+    </div>
+
+          <!-- <input id=clear-form name="passwords[old]" type="password" placeholder="old password">
+                    <input id=clear-form name="passwords[new]" type="password" placeholder="new password">
+                    <input type="submit" value="Change Password"> -->
+          <!-- </form> -->
+
+
+          <!-- Players -->
+          <!-- <div class="player ">
+              <div id="playerOne">Player One</div>
+              <div id="playerTwo">Player Two</div>
+            </div> -->
+
+          <!--User Feedback -->
+  <div id="user-feedback"></div>
+
+  <!-- Gameboard Divs-->
+  <div>
+    <div class="container square" id="game-board">
+      <h2 id="title-game-board">Tic-Tac-Toe</h2>
+      <div class="row">
+        <div id="czero" class="col-4 box" data-cell-index="0"></div>
+        <div id="cone" class="col-4 box" data-cell-index="1"></div>
+        <div id="ctwo" class="col-4 box" data-cell-index="2"></div>
+        <div id="cthree" class="col-4 box" data-cell-index="3"></div>
+        <div id="cfour" class="col-4 box" data-cell-index="4"></div>
+        <div id="cfive" class="col-4 box" data-cell-index="5"></div>
+        <div id="csix" class="col-4 box" data-cell-index="6"></div>
+        <div id="cseven" class="col-4 box" data-cell-index="7"></div>
+        <div id="ceight" class="col-4 box" data-cell-index="8"></div>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+</body>
+
+</html> -->
