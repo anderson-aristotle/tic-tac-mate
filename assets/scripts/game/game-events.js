@@ -4,11 +4,13 @@ const api = require('./game-api.js')
 const ui = require('./game-ui.js')
 
 const createNewGame = () => {
-  console.log('createNewGame')
   event.preventDefault()
   api.createNewGame()
     .then(ui.createGameSuccess)
     .catch(ui.failure)
+  $('#create-game').click(function () {
+    $('.col-4').empty()
+  })
 }
 
 const gameBoard = ['', '', '', '', '', '', '', '', '']
@@ -32,10 +34,6 @@ const switchPlayer = (event) => {
     return
   }
   if (store.winner) { return }
-
-  // console.log(gameBoard)
-  console.log('store')
-  console.log(store)
 
   if (store.currentPlayer === 'X') {
     $(event.target).text('X')
@@ -69,24 +67,50 @@ const switchPlayer = (event) => {
   console.log(winByPlayer)
 
   const didXWin = function () {
-    console.log('didXWin')
     store.winner = winByPlayer.some(line => line.every(item => item === 'X'))
   }
 
   const didOWin = function () {
-    console.log('didOwin')
     if (store.winner) { return }
     store.winner = winByPlayer.some(line => line.every(item => item === 'O'))
   }
 
   didXWin()
   didOWin()
-  console.log(store)
+  api.updateGameBoard(index, store.currentPlayer, store.winner)
+
+  if (winByPlayer === true) {
+    console.log('current player wins!')
+  }
+}
+
+const onGetGames = () => {
+  event.preventDefault()
+  api.getGames()
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onGetGamesFailure)
+}
+const onGetGameById = (event) => {
+  // event.preventDefault()
+  // const form = event.target
+  // const formData = getFormFields(form)
+  // api.getGameById(formData)
+  //   .then(ui.getGameByIdSuccess)
+  //   .catch(ui.getGameByIdfailure)
+}
+
+const onGetAllGames = () => {
+  api.getAllGames()
+    .then(ui.onGetAllGamesSuccess)
+    .catch(ui.onGetGamesFailure)
 }
 
 module.exports = {
   switchPlayer,
   createNewGame,
   gameBoard,
-  winConditions
+  winConditions,
+  onGetGames,
+  onGetGameById,
+  onGetAllGames
 }

@@ -2,12 +2,16 @@
 const store = require('../store.js')
 
 const createGameSuccess = (gameResponse) => {
-  console.log(gameResponse)
   $('user-message').text('Begin Game')
-  console.log(gameResponse.game)
+
+  $('#tic-tac-toe').children().each(function (div) {
+    $(this).html('')
+  })
+
   store.game = gameResponse.game
   store.currentPlayer = 'X'
   store.winner = false
+
   console.log('store')
   console.log(store)
 }
@@ -22,42 +26,13 @@ const userFeedBack = () => {
   $('user-feedback').on()
 }
 
-const signInSuccess = (data) => {
-  $('#user-message').text('Successfully signed Sign In')
-  $('.before-sign-in').hide()
-  $('.after-sign-in').show()
-  store.user = data.user
-}
-
 const resetGame = () => {
-  $('#user-message').text('Congrats, game is reset!')
+  $('#user-feedback').text('Congrats, game is reset!')
 }
-// console.log('store:', store)
-
-// const onGetGames = () => {
-//   gameApi.getGames()
-//     .then(gameUi.onGetGamesSuccess)
-//     .catch(gameUi.onGetGamesFailure)
-// }
-// const onGetGameById = (event) => {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   gameApi.getGameById(formData)
-//     .then(gameUi.getGameByIdSuccess)
-//     .catch(gameUi.getGameByIdfailure)
-// }
-
-// const onGetAllGames = () => {
-//   gameApi.getAllGames()
-//   .then(gameUi.onGetAllGamesSuccess)
-//   .catch(gameUi.onGetGamesFailure)
-// }
 
 module.exports = {
   createGameSuccess,
   resetGame,
   switchPlayerSuccess,
-  userFeedBack,
-  signInSuccess
+  userFeedBack
 }

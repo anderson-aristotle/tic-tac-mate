@@ -17,21 +17,20 @@ const signIn = (formData) => {
   })
 }
 
-const changePassword = (formData) => {
-  console.log('store:', store)
+const changePassword = formData => {
   return $.ajax({
-    url: config.apiUrl + 'change-password',
     method: 'PATCH',
+    url: config.apiUrl + 'change-password',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: formData
   })
 }
-const signOut = () => {
-  console.log('store:', store)
+
+const signOut = function () {
   return $.ajax({
-    url: config.apiUrl + 'sign-out',
+    url: config.apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

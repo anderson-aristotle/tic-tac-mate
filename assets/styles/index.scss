@@ -24,7 +24,21 @@ input {
   width: 200px;
 }
 
+.sign-up-container {
+  align-items: center;
+  display: block;
+  margin-left: 30%;
+  top: 200px;
+  width: 40%;
+}
+
 .sign-in-container {
+  align-items: center;
+  display: block;
+  margin-left: 30%;
+  margin-top: 10%;
+  top: 200px;
+  width: 40%;
 }
 
 .hidden {
@@ -50,9 +64,11 @@ input {
   text-align: center;
 }
 
-#sign-up-container{
-
+.your-turn {
+  font-weight: bold;
 }
+
+
 #title-game-board {
   text-align: center;
 }

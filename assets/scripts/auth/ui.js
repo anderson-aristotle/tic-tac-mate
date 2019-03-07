@@ -1,6 +1,6 @@
 'use strict'
 const store = require('../store.js')
-const startGame = require('../game/game-events.js')
+// const startGame = require('../game/game-events.js')
 
 const signUpSuccess = (data) => {
   $('#sign-up-success-container').show()
@@ -8,13 +8,17 @@ const signUpSuccess = (data) => {
   setTimeout(() => {
     $('#sign-up-auth-alert-success').removeClass('show')
     $('#sign-up-success-container').hide()
-  }, 2000)
+  }, 1000)
   $('.sign-up-container').hide()
   $('.sign-in-container').show()
 }
 
 const signInSuccess = (data) => {
-  $('#user-message').text('Successfully signed Sign In')
+  $('#sign-in-auth-alert-success').show()
+  $('#sign-in-success-container').addClass('show')
+  setTimeout(() => {
+    $('#user-feedback').removeClass('show')
+  }, 1000)
   $('.before-sign-in').hide()
   $('.after-sign-in').show()
   store.user = data.user
@@ -34,22 +38,26 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = () => {
-  $('#user-message').text('Successfully change passward')
+  $('#user-message').text('Successfully change password!')
 }
 const changePasswordFailure = () => {
   $('#user-message').text('FAILED')
 }
 
-const signOutSuccess = () => {
-  $('#user-message').text('success')
-  $('form').trigger('reset')
+const signOutSuccess = function () {
+  $('#sign-out-alert-container').show()
+  $('#sign-out-auth-alert-success').addClass('show')
+  $('#clear-form').reset()
+
+  console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
-  $('.before-sign-in').show()
-  $('.after-sign-in').hide()
 }
 
-const signOutFailure = () => {
-  $('#user-message').text('FAILED')
+const signOutFailure = function (error) {
+  $('#message').text('Error on sign out')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  console.error('signOutFailure ran. Error is :', error)
 }
 
 const failure = () => {
